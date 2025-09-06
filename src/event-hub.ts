@@ -29,7 +29,7 @@ export class EventHub extends cdk.Stack {
     eventBus.archive("ArchiveEventLake", {
       eventPattern: {
         source: ["custom"],
-        detail: {},
+        detail: { "detail-type": [{ exists: true }] },
       },
     })
 
